@@ -21,9 +21,7 @@ const renderer = new WebGLRenderer({
   canvas: document.querySelector("#bg"),
 });
 
-const spaceTexture = new THREE.TextureLoader().load(
-  "./images/background_space.jpg"
-);
+const spaceTexture = new THREE.TextureLoader().load("/background_space.jpg");
 scene.background = spaceTexture;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -34,7 +32,7 @@ camera.position.setZ(20);
 /**
  * Mars
  */
-const marsTexture = new THREE.TextureLoader().load("./images/mars-texture.jpg");
+const marsTexture = new THREE.TextureLoader().load("/mars-texture.jpg");
 
 const marsGeometry = new THREE.SphereGeometry(15, 64, 32);
 const marsMaterial = new THREE.MeshStandardMaterial({
@@ -51,9 +49,7 @@ mars.rotation.z -= 0.1;
 /**
  * Earth
  */
-const earthTexture = new THREE.TextureLoader().load(
-  "./images/earth-texture.jpg"
-);
+const earthTexture = new THREE.TextureLoader().load("/earth-texture.jpg");
 
 const earthGeometry = new THREE.SphereGeometry(2, 64, 32);
 const earthMaterial = new THREE.MeshStandardMaterial({
@@ -67,9 +63,7 @@ earth.position.set(-50, 0, -50);
 /**
  * Venus
  */
-const venusTexture = new THREE.TextureLoader().load(
-  "./images/venus-texture.jpg"
-);
+const venusTexture = new THREE.TextureLoader().load("/venus-texture.jpg");
 
 const venusGeometry = new THREE.SphereGeometry(0.5, 64, 32);
 const venusMaterial = new THREE.MeshStandardMaterial({
@@ -85,7 +79,7 @@ scene.add(mars, earth, venus);
 /**
  * Sun
  */
-const sunTexture = new THREE.TextureLoader().load("./images/sun-texture.jpg");
+const sunTexture = new THREE.TextureLoader().load("/sun-texture.jpg");
 
 const sunGeometry = new THREE.SphereGeometry(0.3, 32, 16);
 const sunMaterial = new THREE.MeshBasicMaterial({
@@ -97,7 +91,7 @@ const sun = new THREE.Mesh(sunGeometry, sunMaterial);
 /**
  * Sun lensflare
  */
-const flareTexture = new THREE.TextureLoader().load("./images/sun-flare.png");
+const flareTexture = new THREE.TextureLoader().load("/sun-flare.png");
 
 const sunLensFlare = new Lensflare();
 
