@@ -1,6 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu+Mono&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
 #bg {
-  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+}
+
+#name {
+  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu Mono", monospace;
+  z-index: 2;
+  position: absolute;
+  top: 250px;
+  left: 100px;
 }

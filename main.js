@@ -7,6 +7,7 @@ import {
   Lensflare,
   LensflareElement,
 } from "three/examples/jsm/objects/Lensflare";
+import Typed from "typed.js";
 
 const scene = new THREE.Scene();
 
@@ -139,3 +140,42 @@ const animate = () => {
 };
 
 animate();
+
+const scrollHandler = () => {
+  const element = document.getElementById("bg");
+
+  const distanceToTop =
+    window.pageYOffset + element.getBoundingClientRect().top;
+  const elementHeight = element.offsetHeight;
+  const scrollTop = document.documentElement.scrollTop;
+
+  let opacity = 1;
+
+  if (scrollTop > distanceToTop) {
+    opacity = 1 - (scrollTop - distanceToTop) / elementHeight;
+  }
+
+  if (opacity >= 0) {
+    element.style.opacity = opacity;
+  }
+};
+
+window.addEventListener("scroll", scrollHandler);
+
+const typeOut = () => {
+  const heading = new Typed("#name-heading", {
+    strings: ["Ludvík J. Roubíček"],
+    typeSpeed: 100,
+    loop: false,
+    showCursor: false,
+  });
+  const subHeading = new Typed("#sub-heading", {
+    strings: ["Software developer, IT student"],
+    typeSpeed: 100,
+    loop: false,
+    showCursor: false,
+    startDelay: 200,
+  });
+};
+
+window.onload = typeOut();
