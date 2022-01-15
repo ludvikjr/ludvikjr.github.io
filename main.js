@@ -58,21 +58,21 @@ const earthMaterial = new THREE.MeshStandardMaterial({
 
 const earth = new THREE.Mesh(earthGeometry, earthMaterial);
 
-earth.position.set(-50, 0, -50);
+earth.position.set(-70, 0, -70);
 
 /**
  * Venus
  */
 const venusTexture = new THREE.TextureLoader().load("/venus-texture.jpg");
 
-const venusGeometry = new THREE.SphereGeometry(0.5, 64, 32);
+const venusGeometry = new THREE.SphereGeometry(0.4, 64, 32);
 const venusMaterial = new THREE.MeshStandardMaterial({
   map: venusTexture,
 });
 
 const venus = new THREE.Mesh(venusGeometry, venusMaterial);
 
-venus.position.set(-90, 0, -60);
+venus.position.set(-110, 0, -70);
 
 scene.add(mars, earth, venus);
 
